@@ -15,10 +15,11 @@ export const keyMap: Record<string, Planets> = {
 export const planetMap: Record<Planets, Planet> = {
   0: {
     name: "Słońce",
+    type: "Żółty karzeł",
     mass: "1.989 x 10^30 kg",
     diameter: "1.3914 x 10^6 km",
-    luminosity: "3.828 x 10^26 W",
-    temperature: "5,778 K",
+    luminosity: "4.83",
+    temperature: "5,778 K (5498.85 C)",
     age: "4.6 miliarda lat",
     apoapsis: null,
     periapsis: null,
@@ -29,6 +30,7 @@ export const planetMap: Record<Planets, Planet> = {
   },
   1: {
     name: "Merkury",
+    type: "Skalista",
     mass: "0.330 x 10^24 kg",
     diameter: "4879 km",
     luminosity: null,
@@ -43,6 +45,7 @@ export const planetMap: Record<Planets, Planet> = {
   },
   2: {
     name: "Wenus",
+    type: "Skalista",
     mass: "4.87 x 10^24 kg",
     diameter: "12104 km",
     luminosity: null,
@@ -57,6 +60,7 @@ export const planetMap: Record<Planets, Planet> = {
   },
   3: {
     name: "Ziemia",
+    type: "Skalista",
     mass: "5.97 x 10^24 kg",
     diameter: "12756 km",
     luminosity: null,
@@ -71,6 +75,7 @@ export const planetMap: Record<Planets, Planet> = {
   },
   4: {
     name: "Mars",
+    type: "Skalista",
     mass: "0.642 x 10^24 kg",
     diameter: "6792 km",
     luminosity: null,
@@ -85,6 +90,7 @@ export const planetMap: Record<Planets, Planet> = {
   },
   5: {
     name: "Jowisz",
+    type: "Gazowa",
     mass: "1898 x 10^24 kg",
     diameter: "142984 km",
     luminosity: null,
@@ -99,6 +105,7 @@ export const planetMap: Record<Planets, Planet> = {
   },
   6: {
     name: "Saturn",
+    type: "Gazowa",
     mass: "568 x 10^24 kg",
     diameter: "120536 km",
     luminosity: null,
@@ -113,6 +120,7 @@ export const planetMap: Record<Planets, Planet> = {
   },
   7: {
     name: "Uran",
+    type: "Gazowa",
     mass: "86.8 x 10^24 kg",
     diameter: "51118 km",
     luminosity: null,
@@ -127,6 +135,7 @@ export const planetMap: Record<Planets, Planet> = {
   },
   8: {
     name: "Neptun",
+    type: "Gazowa",
     mass: "102 x 10^24 kg",
     diameter: "49528 km",
     luminosity: null,

@@ -12,6 +12,7 @@ export enum Planets {
 
 export interface Planet {
   name: string;
+  type: string;
   mass: string;
   diameter: string;
   luminosity: string | null;

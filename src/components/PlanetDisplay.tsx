@@ -18,12 +18,13 @@ export default function PlanetDisplay({ planet }: PlanetDisplayProps) {
     <div className="w-full h-full p-[50px]">
       <div className="w-full h-full flex border-2 border-secondary rounded-xl">
         <div className="w-full h-full flex flex-col">
-          <PlanetInfoItem name="Planeta" value={planetData?.name} />
+          <PlanetInfoItem name="Objekt" value={planetData?.name} />
+          <PlanetInfoItem name="Typ" value={planetData?.type} />
           <PlanetInfoItem name="Masa" value={planetData?.mass} />
           <PlanetInfoItem name="Średnica" value={planetData?.diameter} />
 
           {planetData?.luminosity &&
-            <PlanetInfoItem name="Jasność absolutna" value={planetData?.luminosity} />
+            <PlanetInfoItem name="Absolutna wielkość gwiazdowa" value={planetData?.luminosity} />
           }
 
           {planetData?.temperature &&
