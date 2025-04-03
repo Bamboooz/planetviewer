@@ -13,7 +13,7 @@ export default function App() {
     const registerShortcuts = async () => {
       await register("Esc", async () => {
         const appWindow = getCurrentWindow();
-    
+
         await appWindow.close();
       });
 
@@ -29,10 +29,7 @@ export default function App() {
 
   return (
     <div className="w-screen h-screen">
-      {planet !== null 
-        ? <PlanetDisplay planet={planet} />
-        : <Placeholder />
-      }
+      {planet !== null ? <PlanetDisplay planet={planet} /> : <Placeholder />}
     </div>
   );
 }

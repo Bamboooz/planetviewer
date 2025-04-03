@@ -21,7 +21,6 @@ export interface Planet {
   apoapsis: string | null;
   periapsis: string | null;
   eccentrity: string | null;
-  sunDistance: string | null;
   orbitPeriod: string | null;
   moons: string | null;
 }

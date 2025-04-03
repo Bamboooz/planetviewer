@@ -6,7 +6,7 @@
 }
 
 :root {
-  --background: #1b1e28;
+  --background: #000000;
   --foreground: #d3d3d3;
 }
 
@@ -15,4 +15,3 @@ body {
   background-color: var(--background);
   font-size: 18px;
 }
-

@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { Planets, Planet } from "../types";
-import { planetMap } from "../const";
-import PlanetInfoItem from "./PlanetInfoItem";
+import { modelMap, planetMap, soundMap } from "../const";
+import PlanetInfoDisplay from "./PlanetInfoDisplay";
+import PlanetModelDisplay from "./PlanetModelDisplay";
+import PlanetSoundPlayer from "./PlanetSoundPlayer";
 
 interface PlanetDisplayProps {
   planet: Planets;
@@ -9,63 +11,28 @@ interface PlanetDisplayProps {
 
 export default function PlanetDisplay({ planet }: PlanetDisplayProps) {
   const [planetData, setPlanetData] = useState<Planet | null>(null);
+  const [planetModel, setPlanetModel] = useState<string | null>(null);
+  const [planetSound, setPlanetSound] = useState<string | null>(null);
 
   useEffect(() => {
     setPlanetData(planetMap[planet]);
+    setPlanetModel(modelMap[planet]);
+    setPlanetSound(soundMap[planet]);
   }, [planet]);
 
   return (
-    <div className="w-full h-full p-[50px]">
-      <div className="w-full h-full flex border-2 border-secondary rounded-xl">
-        <div className="w-full h-full flex flex-col">
-          <PlanetInfoItem name="Objekt" value={planetData?.name} />
-          <PlanetInfoItem name="Typ" value={planetData?.type} />
-          <PlanetInfoItem name="Masa" value={planetData?.mass} />
-          <PlanetInfoItem name="Średnica" value={planetData?.diameter} />
+    <>
+      {planetSound && <PlanetSoundPlayer planetSound={planetSound} />}
 
-          {planetData?.luminosity &&
-            <PlanetInfoItem name="Absolutna wielkość gwiazdowa" value={planetData?.luminosity} />
-          }
+      <div className="w-full h-full p-[50px]">
+        <div className="w-full h-full flex border-2 border-secondary rounded-xl">
+          {planetData && <PlanetInfoDisplay planetData={planetData} />}
 
-          {planetData?.temperature &&
-            <PlanetInfoItem name="Temperatura" value={planetData?.temperature} />
-          }
+          <div className="w-[4px] h-full bg-secondary" />
 
-          {planetData?.age &&
-            <PlanetInfoItem name="Wiek" value={planetData?.age} />
-          }
-
-          {planetData?.apoapsis &&
-            <PlanetInfoItem name="Apocentrum" value={planetData?.apoapsis} />
-          }
-
-          {planetData?.periapsis &&
-            <PlanetInfoItem name="Perycentrum" value={planetData?.periapsis} />
-          }
-
-          {planetData?.eccentrity &&
-            <PlanetInfoItem name="Mimośród" value={planetData?.eccentrity} />
-          }
-
-          {planetData?.sunDistance &&
-            <PlanetInfoItem name="Odległość od Słońca" value={planetData?.sunDistance} />
-          }
-
-          {planetData?.orbitPeriod &&
-            <PlanetInfoItem name="Okres orbity" value={planetData?.orbitPeriod} />
-          }
-
-          {planetData?.moons &&
-            <PlanetInfoItem name="Księżyce" value={planetData?.moons} />
-          }
-        </div>
-
-        <div className="w-[4px] h-full bg-secondary" />
-
-        <div className="w-full h-full">
-          
+          {planetModel && <PlanetModelDisplay planetModel={planetModel} />}
         </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -1,19 +1,53 @@
 import { Planet, Planets } from "../types";
 
+import sunModel from "../assets/models/sun.gif";
+import mercuryModel from "../assets/models/mercury.gif";
+import venusModel from "../assets/models/venus.gif";
+import earthModel from "../assets/models/earth.gif";
+import marsModel from "../assets/models/mars.gif";
+import jupiterModel from "../assets/models/jupiter.gif";
+import saturnModel from "../assets/models/saturn.gif";
+import uranusModel from "../assets/models/uranus.gif";
+import neptuneModel from "../assets/models/neptune.gif";
+
 export const keyMap: Record<string, Planets> = {
-  "Numpad1": Planets.SATURN,
-  "Numpad2": Planets.URANUS,
-  "Numpad3": Planets.NEPTUNE,
-  "Numpad4": Planets.EARTH,
-  "Numpad5": Planets.MARS,
-  "Numpad6": Planets.JUPITER,
-  "Numpad7": Planets.SUN,
-  "Numpad8": Planets.MERCURY,
-  "Numpad9": Planets.VENUS,
+  Numpad1: Planets.SATURN,
+  Numpad2: Planets.URANUS,
+  Numpad3: Planets.NEPTUNE,
+  Numpad4: Planets.EARTH,
+  Numpad5: Planets.MARS,
+  Numpad6: Planets.JUPITER,
+  Numpad7: Planets.SUN,
+  Numpad8: Planets.MERCURY,
+  Numpad9: Planets.VENUS,
+};
+
+export const modelMap: Record<Planets, string> = {
+  [Planets.SUN]: sunModel,
+  [Planets.MERCURY]: mercuryModel,
+  [Planets.VENUS]: venusModel,
+  [Planets.EARTH]: earthModel,
+  [Planets.MARS]: marsModel,
+  [Planets.JUPITER]: jupiterModel,
+  [Planets.SATURN]: saturnModel,
+  [Planets.URANUS]: uranusModel,
+  [Planets.NEPTUNE]: neptuneModel,
+};
+
+export const soundMap: Record<Planets, string> = {
+  [Planets.SUN]: sunModel,
+  [Planets.MERCURY]: mercuryModel,
+  [Planets.VENUS]: venusModel,
+  [Planets.EARTH]: earthModel,
+  [Planets.MARS]: marsModel,
+  [Planets.JUPITER]: jupiterModel,
+  [Planets.SATURN]: saturnModel,
+  [Planets.URANUS]: uranusModel,
+  [Planets.NEPTUNE]: neptuneModel,
 };
 
 export const planetMap: Record<Planets, Planet> = {
-  0: {
+  [Planets.SUN]: {
     name: "Słońce",
     type: "Żółty karzeł",
     mass: "1.989 x 10^30 kg",
@@ -24,11 +58,10 @@ export const planetMap: Record<Planets, Planet> = {
     apoapsis: null,
     periapsis: null,
     eccentrity: null,
-    sunDistance: null,
     orbitPeriod: null,
     moons: null,
   },
-  1: {
+  [Planets.MERCURY]: {
     name: "Merkury",
     type: "Skalista",
     mass: "0.330 x 10^24 kg",
@@ -39,11 +72,10 @@ export const planetMap: Record<Planets, Planet> = {
     apoapsis: "6.98 x 10^7 km",
     periapsis: "4.60 x 10^7 km",
     eccentrity: "0.206",
-    sunDistance: "5.79 x 10^7 km",
     orbitPeriod: "88.0 dni",
     moons: "0",
   },
-  2: {
+  [Planets.VENUS]: {
     name: "Wenus",
     type: "Skalista",
     mass: "4.87 x 10^24 kg",
@@ -54,11 +86,10 @@ export const planetMap: Record<Planets, Planet> = {
     apoapsis: "1.089 x 10^8 km",
     periapsis: "1.075 x 10^8 km",
     eccentrity: "0.007",
-    sunDistance: "1.082 x 10^8 km",
     orbitPeriod: "224.7 dni",
     moons: "0",
   },
-  3: {
+  [Planets.EARTH]: {
     name: "Ziemia",
     type: "Skalista",
     mass: "5.97 x 10^24 kg",
@@ -69,11 +100,10 @@ export const planetMap: Record<Planets, Planet> = {
     apoapsis: "1.521 x 10^8 km",
     periapsis: "1.471 x 10^8 km",
     eccentrity: "0.017",
-    sunDistance: "1.496 x 10^8 km",
     orbitPeriod: "365.2 dni",
     moons: "1",
   },
-  4: {
+  [Planets.MARS]: {
     name: "Mars",
     type: "Skalista",
     mass: "0.642 x 10^24 kg",
@@ -84,14 +114,13 @@ export const planetMap: Record<Planets, Planet> = {
     apoapsis: "2.493 x 10^8 km",
     periapsis: "2.067 x 10^8 km",
     eccentrity: "0.094",
-    sunDistance: "2.28 x 10^8 km",
     orbitPeriod: "687.0 dni",
     moons: "2",
   },
-  5: {
+  [Planets.JUPITER]: {
     name: "Jowisz",
     type: "Gazowa",
-    mass: "1898 x 10^24 kg",
+    mass: "1.898 x 10^27 kg",
     diameter: "142984 km",
     luminosity: null,
     temperature: null,
@@ -99,14 +128,13 @@ export const planetMap: Record<Planets, Planet> = {
     apoapsis: "8.164 x 10^8 km",
     periapsis: "7.406 x 10^8 km",
     eccentrity: "0.049",
-    sunDistance: "7.785 x 10^8 km",
     orbitPeriod: "4331 dni",
     moons: "95",
   },
-  6: {
+  [Planets.SATURN]: {
     name: "Saturn",
     type: "Gazowa",
-    mass: "568 x 10^24 kg",
+    mass: "5.68 x 10^26 kg",
     diameter: "120536 km",
     luminosity: null,
     temperature: null,
@@ -114,14 +142,13 @@ export const planetMap: Record<Planets, Planet> = {
     apoapsis: "1.506 x 10^9 km",
     periapsis: "1.358 x 10^9 km",
     eccentrity: "0.052",
-    sunDistance: "1.432 x 10^9 km",
     orbitPeriod: "10747 dni",
     moons: "274",
   },
-  7: {
+  [Planets.URANUS]: {
     name: "Uran",
     type: "Gazowa",
-    mass: "86.8 x 10^24 kg",
+    mass: "8.68 x 10^25 kg",
     diameter: "51118 km",
     luminosity: null,
     temperature: null,
@@ -129,14 +156,13 @@ export const planetMap: Record<Planets, Planet> = {
     apoapsis: "3.001 x 10^9 km",
     periapsis: "2.732 x 10^9 km",
     eccentrity: "0.047",
-    sunDistance: "2.867 x 10^9 km",
     orbitPeriod: "30589 dni",
     moons: "28",
   },
-  8: {
+  [Planets.NEPTUNE]: {
     name: "Neptun",
     type: "Gazowa",
-    mass: "102 x 10^24 kg",
+    mass: "1.02 x 10^26 kg",
     diameter: "49528 km",
     luminosity: null,
     temperature: null,
@@ -144,8 +170,7 @@ export const planetMap: Record<Planets, Planet> = {
     apoapsis: "4.558 x 10^9 km",
     periapsis: "4.471 x 10^9 km",
     eccentrity: "0.010",
-    sunDistance: "4.515 x 10^9 km",
     orbitPeriod: "59800 dni",
     moons: "16",
-  }
+  },
 };
