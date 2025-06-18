@@ -21,15 +21,15 @@ import uranusSound from "../assets/audio/uranus.mp3";
 import neptuneSound from "../assets/audio/neptune.mp3";
 
 export const keyMap: Record<string, Planets> = {
-  1: Planets.SUN,
-  2: Planets.MERCURY,
-  3: Planets.VENUS,
-  4: Planets.EARTH,
-  5: Planets.MARS,
-  6: Planets.JUPITER,
-  7: Planets.SATURN,
-  8: Planets.URANUS,
-  9: Planets.NEPTUNE,
+  Numpad1: Planets.SUN,
+  Numpad2: Planets.MERCURY,
+  Numpad3: Planets.VENUS,
+  Numpad4: Planets.EARTH,
+  Numpad5: Planets.MARS,
+  Numpad6: Planets.JUPITER,
+  Numpad7: Planets.SATURN,
+  Numpad8: Planets.URANUS,
+  Numpad9: Planets.NEPTUNE,
 };
 
 export const modelMap: Record<Planets, string> = {
